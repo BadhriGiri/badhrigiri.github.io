@@ -1,0 +1,13 @@
+# Full resolution photo originals. Kept locally so tools/prepare-photos.py can
+# always rebuild from source, never deployed.
+_photo-originals/
+
+# Windows and editor noise
+Thumbs.db
+desktop.ini
+.DS_Store
+_tile-cache/
+
+# Assessed work held back until the university confirms it can be published.
+# Restore with: python tools/publish-documents.py --restore
+_withheld/

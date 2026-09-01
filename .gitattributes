@@ -1,0 +1,8 @@
+# Keep line endings consistent whichever machine touches the repo. Without this,
+# an editor or a script on Windows can rewrite every line of a file and turn the
+# next diff into noise.
+* text=auto eol=lf
+*.jpg  binary
+*.png  binary
+*.pdf  binary
+*.xlsx binary
