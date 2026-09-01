@@ -31,6 +31,7 @@ _tile-cache/                  Downloaded map tiles, git ignored
 tools/prepare-photos.py       Resizes photos, strips EXIF, builds thumbnails
 tools/build-photos.py         Writes the photo markup to match the folders
 tools/publish-documents.py    Holds the assessed work back, or puts it back
+tools/make-qr.py              QR codes for the site address, checked that they scan
 _withheld/                    Assessed work kept out of the repo, git ignored
 _photo-originals/             Full resolution originals, git ignored, never deployed
 ```
@@ -195,6 +196,20 @@ student number, no tutor name, no visa detail, no full postcode.
 
 **Em dashes:** none in any page I wrote. Two of the converted notebooks contain five between them.
 Those are submitted work and stay untouched, by your decision and mine.
+
+## QR codes
+
+```bash
+python tools/make-qr.py
+```
+
+Writes four files into `qr/`, which is git ignored: a plain code, one in the site's colours, one
+with your name and the address printed underneath, and an SVG for print. Each PNG is decoded again
+after it is written and compared to the URL, and the script fails rather than hand you a code that
+does not scan.
+
+They are sized so a phone shows them at native resolution. An upscaled QR has soft edges and soft
+edges cost scans. If the site address ever changes, rerun this.
 
 ## Deploying
 

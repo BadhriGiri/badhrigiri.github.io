@@ -11,3 +11,6 @@ _tile-cache/
 # Assessed work held back until the university confirms it can be published.
 # Restore with: python tools/publish-documents.py --restore
 _withheld/
+
+# Generated QR codes. Rebuild any time with: python tools/make-qr.py
+qr/
