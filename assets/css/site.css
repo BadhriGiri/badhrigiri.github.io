@@ -349,6 +349,48 @@ p:last-child { margin-bottom: 0; }
 }
 .meta-list dd { margin: 0; font-size: .95rem; color: var(--ink); }
 
+/* A third party credential, sat in a hero. Uses the callout's accent edge so it
+   reads as the same family, but stays to one line of text so it does not
+   compete with the lede above it. */
+.award {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem 0;
+  max-width: 62ch;
+  margin-top: 1.7rem;
+  padding: .9rem 1.15rem;
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: var(--accent-wash);
+  font-size: .92rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.award-label {
+  flex-basis: 100%;
+  font-family: var(--font-mono);
+  font-size: .62rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.award b { font-weight: 600; color: var(--ink); }
+
+/* The pull quote, but for words that are somebody else's. The plain .pull is
+   unquoted and reads as mine, which would misattribute a borrowed sentence. */
+.pull--quote { max-width: 34ch; }
+.pull--quote cite {
+  display: block;
+  margin-top: 1.2rem;
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: .66rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
 /* --------------------------------------------------------------------------
    7. Hero
    -------------------------------------------------------------------------- */
