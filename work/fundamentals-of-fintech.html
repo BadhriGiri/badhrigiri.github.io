@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fundamentals of Financial Technology | Badhri Narayanan Giri</title>
+<meta name="description" content="Four exercises in sequence: exploring the Bitcoin blockchain through its API, a CAPM analysis of Bitcoin against gold and the S&P 500, reproducing a published machine learning model, and building a credit default classifier.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%231F4B3F'/><text y='.9em' x='50%25' text-anchor='middle' font-size='62' font-family='Georgia,serif' fill='%23FBFAF7'>B</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css?v=16">
+<script>
+  (function () {
+    try {
+      document.documentElement.classList.add("js");
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Badhri <span>Giri</span></a>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../off-the-desk.html">Off the Desk</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <div class="header-tools">
+      <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <a class="back-link" href="../index.html">Back to home</a>
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">University of Exeter &middot; MSc project &middot; Python</p>
+          <h1>Fundamentals of Financial Technology</h1>
+          <p class="lede">Four exercises in sequence, each one harder to fake than the last: read a live blockchain, measure what Bitcoin actually is as an asset, <strong>reproduce somebody else's model, then build your own</strong>.</p>
+          <ul class="tags">
+            <li class="tag">Bitcoin</li>
+            <li class="tag">CAPM</li>
+            <li class="tag">Machine learning</li>
+            <li class="tag">APIs</li>
+          </ul>
+        </div>
+        <div class="hero-meta">
+          <dl class="meta-list">
+            <div>
+              <dt>Format</dt>
+              <dd>Assessed MSc project, individual work</dd>
+            </div>
+            <div>
+              <dt>Built in</dt>
+              <dd>Python, plus a browser wallet in HTML, CSS and JavaScript</dd>
+            </div>
+            <div>
+              <dt>Data</dt>
+              <dd>Live blockchain API, FRED, market price series</dd>
+            </div>
+            <div>
+              <dt>Ends with</dt>
+              <dd>A credit default classifier built from scratch</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt reveal">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow eyebrow--accent">01</p>
+        <h2>Reading a blockchain rather than reading about one</h2>
+      </div>
+      <div class="prose">
+        <p>
+          The first exercise pulled a real transaction from the Bitcoin blockchain through its API and
+          <strong>took the block apart field by field</strong>, including converting the timestamp out
+          of Unix epoch and explaining what each component is actually there for. I then built a
+          browser based wallet that generates a key pair locally, derives an address, renders it as a
+          QR code and pulls live prices from a market API.
+        </p>
+        <p>
+          The wallet <strong>stores nothing and generates a new key on every page load</strong>, which
+          makes it useless as a wallet and exactly right as a teaching artefact. The point was
+          understanding how an address comes to exist, not building something anyone should put money
+          in.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow eyebrow--accent">02</p>
+        <h2>What Bitcoin is, measured rather than asserted</h2>
+      </div>
+      <div class="prose">
+        <p>
+          Three series pulled from FRED and elsewhere: <strong>Bitcoin as the risky asset, gold as the
+          safe one, and the S&amp;P 500 as the benchmark</strong>. Prices converted to log returns,
+          then correlation analysis and a CAPM regression producing alpha, beta and R squared for
+          each.
+        </p>
+        <p>
+          This is the exercise that answers the question people argue about rhetorically. Beta
+          tells you whether Bitcoin amplifies market moves, and <strong>R squared tells you how much of it the
+          market explains at all</strong>. A low R squared is itself a finding: it means most of what
+          is happening is not coming from the market factor, which is a problem for anyone describing
+          the asset purely as leveraged equity risk.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt reveal">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow eyebrow--accent">03</p>
+        <h2>Reproducing before building</h2>
+      </div>
+      <div class="prose">
+        <p>
+          Before building anything of my own I had to <strong>reproduce a published machine learning
+          model from its written description</strong>, working out the structure, the feature pipeline
+          and the role of logistic regression in it, then explain why logistic regression suits a
+          credit decision where ordinary least squares does not.
+        </p>
+        <p>
+          The answer is that <strong>a credit decision is a probability bounded between zero and
+          one</strong>, and a linear model will cheerfully predict a negative default probability.
+          Reproducing someone else's work first is also the fastest way to find out whether you
+          understood the paper or only recognised the words in it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow eyebrow--accent">04</p>
+        <h2>A credit default classifier of my own</h2>
+      </div>
+      <div class="prose">
+        <p>
+          The final piece was my own classifier, evaluated on accuracy, ROC-AUC and a full
+          classification report, with the <strong>confusion matrix read in business terms rather than
+          statistical ones</strong>. A false negative is a borrower who defaults and was approved. A
+          false positive is a profitable customer turned away.
+        </p>
+        <p>
+          Those two errors are not equally expensive, and <strong>the threshold is a commercial
+          decision rather than a modelling one</strong>. Presenting it that way is the difference
+          between handing a lender a model and handing them something they can actually set policy
+          with.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <p class="eyebrow eyebrow--accent" style="margin-bottom:.9rem">Get in touch</p>
+        <h2>Happy to talk about any of this in detail.</h2>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:badhrinarayanan2005@gmail.com">badhrinarayanan2005@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/badhrinarayanan05/" rel="noopener" target="_blank">LinkedIn</a></li>
+          <li><a href="https://github.com/BadhriGiri" rel="noopener" target="_blank">GitHub</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>More</h3>
+        <ul>
+          <li><a href="../index.html#projects">All projects</a></li>
+          <li><a href="../off-the-desk.html">Off the Desk</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Elsewhere</h3>
+        <ul>
+          <li><a href="../assets/docs/CV.pdf" target="_blank" rel="noopener">Resume</a></li>
+          <li><a href="https://block-med-nine.vercel.app" rel="noopener" target="_blank">Blockmediary prototype</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>Badhri Narayanan Giri</span>
+      <span>Built by hand, no tracking</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js?v=16"></script>
+</body>
+</html>

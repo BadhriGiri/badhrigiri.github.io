@@ -8,8 +8,8 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%231F4B3F'/><text y='.9em' x='50%25' text-anchor='middle' font-size='62' font-family='Georgia,serif' fill='%23FBFAF7'>B</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=15">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css?v=16">
 <script>
   (function () {
     try {
@@ -56,7 +56,7 @@
           <p class="lede">
             Three technical pieces in Python, each with a different way of being wrong. An
             optimiser that would not converge, a price forecast that could easily have cheated,
-            and a contract that had to work on a chain where you cannot quietly try again.
+            and <strong>a contract that had to work on a chain where you cannot quietly try again</strong>.
           </p>
           <ul class="tags">
             <li class="tag">Python</li>
@@ -101,8 +101,8 @@
           asked for working code.
         </p>
         <p>
-          What ties the three pieces below together is that each one can produce a confident
-          looking output that is worthless, and in each case the interesting work was finding out
+          What ties the three pieces below together is that <strong>each one can produce a confident
+          looking output that is worthless</strong>, and in each case the interesting work was finding out
           whether that had happened.
         </p>
       </div>
@@ -124,7 +124,7 @@
           you, because almost anything can cause it.
         </p>
         <p>
-          The cause turned out to be the data rather than the algorithm. Bitcoin and Dogecoin are
+          <strong>The cause turned out to be the data rather than the algorithm</strong>. Bitcoin and Dogecoin are
           separated by several orders of magnitude in price, so a single learning rate could not
           suit both series at once: the step that was reasonable for one was wildly wrong for the
           other. Normalising the inputs fixed it.
@@ -132,8 +132,8 @@
         <p>
           The part worth keeping is what came after. Gradient descent on a linear relationship has
           a closed form solution, so I solved it analytically and checked that my implementation
-          landed in the same place. Without that check I would have had a model that converged,
-          which is not the same thing as a model that is right.
+          landed in the same place. Without that check I would have had <strong>a model that converged,
+          which is not the same thing as a model that is right</strong>.
         </p>
       </div>
     </div>
@@ -154,13 +154,13 @@
         </p>
         <p>
           The first is cross validation. Ordinary k fold cross validation shuffles the data, which
-          on a time series means training on next week to predict last week. The score that comes
+          <strong>on a time series means training on next week to predict last week</strong>. The score that comes
           out looks excellent and means nothing. I used time ordered cross validation so the model
           was only ever tested on data that came after what it had been trained on.
         </p>
         <p>
-          The second is the benchmark. A price forecast should be compared against the naive
-          prediction that tomorrow looks like today, because a surprising number of models cannot
+          The second is the benchmark. A price forecast should be <strong>compared against the naive
+          prediction that tomorrow looks like today</strong>, because a surprising number of models cannot
           beat it. I evaluated on R squared and mean absolute error against that benchmark rather
           than reporting the model's own accuracy in isolation. Reporting a number with nothing to
           compare it to is how forecasts get oversold.
@@ -184,7 +184,7 @@
           played.
         </p>
         <p>
-          Deploying changes the standard. A contract on a live chain is immutable and public:
+          Deploying changes the standard. <strong>A contract on a live chain is immutable and public</strong>:
           there is no quietly patching a mistake, and anybody can read what you wrote. That is a
           useful thing to have experienced directly before writing about why the immutability of a
           ledger creates problems elsewhere, which is exactly what the compliance work on
@@ -209,8 +209,8 @@
             or load.
           </li>
           <li>
-            The Ethereum forecast is an exercise in evaluating a model honestly, not a claim that
-            crypto prices can be predicted. Treating it as the latter would be the exact mistake
+            The Ethereum forecast is an exercise in evaluating a model honestly, <strong>not a claim that
+            crypto prices can be predicted</strong>. Treating it as the latter would be the exact mistake
             the benchmark was there to prevent.
           </li>
           <li>
@@ -222,23 +222,6 @@
     </div>
   </section>
 
-  <!-- ============================ CLOSE ============================ -->
-  <section class="section reveal">
-    <div class="wrap wrap--narrow" style="text-align:center">
-      <p class="eyebrow eyebrow--accent">Next</p>
-      <h2 style="font-size:clamp(1.8rem,4vw,2.6rem);margin:.9rem 0 1.4rem">
-        The other two projects.
-      </h2>
-      <p class="lede" style="margin-bottom:2rem">
-        A stablecoin escrow I ran the compliance workstream on, and an endowment allocation where
-        the recommendation and the optimiser's output were not the same thing.
-      </p>
-      <div class="btn-row" style="justify-content:center">
-        <a class="btn" href="blockmediary.html">Blockmediary</a>
-        <a class="btn btn--ghost" href="endowment-portfolio.html">Endowment portfolio</a>
-      </div>
-    </div>
-  </section>
 
 </main>
 
@@ -258,18 +241,16 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h3>Projects</h3>
+        <h3>More</h3>
         <ul>
-          <li><a href="blockmediary.html">Blockmediary</a></li>
-          <li><a href="endowment-portfolio.html">Endowment portfolio</a></li>
-          <li><a href="forecasting-and-smart-contracts.html">Forecasting and smart contracts</a></li>
+          <li><a href="../index.html#projects">All projects</a></li>
+          <li><a href="../off-the-desk.html">Off the Desk</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h3>Elsewhere</h3>
         <ul>
           <li><a href="../assets/docs/CV.pdf" target="_blank" rel="noopener">Resume</a></li>
-          <li><a href="../off-the-desk.html">Off the Desk</a></li>
           <li><a href="https://block-med-nine.vercel.app" rel="noopener" target="_blank">Blockmediary prototype</a></li>
         </ul>
       </div>
@@ -281,6 +262,6 @@
   </div>
 </footer>
 
-<script src="../assets/js/site.js?v=15"></script>
+<script src="../assets/js/site.js?v=16"></script>
 </body>
 </html>

@@ -8,8 +8,8 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%231F4B3F'/><text y='.9em' x='50%25' text-anchor='middle' font-size='62' font-family='Georgia,serif' fill='%23FBFAF7'>B</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/site.css?v=15">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css?v=16">
 <script>
   (function () {
     try {
@@ -56,8 +56,8 @@
           <p class="lede">
             Investment recommendations for a university endowment fund under budget pressure,
             with a target of 0.3% monthly return. I was the team's lead quantitative analyst,
-            which meant owning the optimisation work and then saying where it should not be
-            trusted.
+            which meant <strong>owning the optimisation work and then saying where it should not be
+            trusted</strong>.
           </p>
           <ul class="tags">
             <li class="tag">Mean variance optimisation</li>
@@ -101,8 +101,8 @@
       <div class="prose">
         <p>
           A university endowment fund under budget pressure needed a multi asset allocation that
-          would deliver 0.3% a month. The number matters more than it looks. An endowment under
-          pressure cannot absorb a bad year the way a fund with headroom can, so the brief was
+          would deliver 0.3% a month. The number matters more than it looks. <strong>An endowment under
+          pressure cannot absorb a bad year</strong> the way a fund with headroom can, so the brief was
           really about the downside as much as the return.
         </p>
         <p>
@@ -131,7 +131,7 @@
           return alone.
         </p>
         <p>
-          None of that is unusual. It is the standard toolkit, applied carefully. What follows is
+          None of that is unusual. <strong>It is the standard toolkit, applied carefully</strong>. What follows is
           the part I would actually point at.
         </p>
       </div>
@@ -152,7 +152,7 @@
             <p>
               The optimiser is indifferent to concentration risk unless you tell it not to be. It
               put almost the entire allocation into a single strategy because that is what the
-              historical numbers rewarded. I flagged it and recommended a 50% cap. The capped
+              historical numbers rewarded. <strong>I flagged it and recommended a 50% cap</strong>. The capped
               portfolio is worse on paper and better in practice, and for a fund that cannot
               absorb a bad year that trade is the right way round.
             </p>
@@ -163,8 +163,8 @@
               Mean variance optimisation is notoriously sensitive to its expected return inputs,
               and ours were estimated from 96 observations. I tested how much the allocation moved
               when the sample length changed, found it moved a great deal, and re-ran the analysis
-              on 150 observations to stabilise the inputs. A model whose answer depends on how far
-              back you started looking is not giving you an answer.
+              on 150 observations to stabilise the inputs. <strong>A model whose answer depends on how far
+              back you started looking is not giving you an answer</strong>.
             </p>
           </li>
           <li>
@@ -172,8 +172,8 @@
             <p>
               I rebuilt the statistical arbitrage hedge ratio on a rolling 252 day window rather
               than fitting it once over the whole period, and added estimation bias analysis. Out
-              of sample, the Sharpe ratio went from 0.41 to 0.56 and maximum drawdown fell from
-              1.23% to 0.98%. An in sample result that does not survive out of sample testing is
+              of sample, <strong>the Sharpe ratio went from 0.41 to 0.56 and maximum drawdown fell from
+              1.23% to 0.98%</strong>. An in sample result that does not survive out of sample testing is
               not a result, it is a description of the past.
             </p>
           </li>
@@ -192,13 +192,13 @@
       <div class="prose">
         <ul>
           <li>
-            The 50% cap is a judgment, not an optimisation. It is defensible and it is not derived
+            <strong>The 50% cap is a judgment, not an optimisation</strong>. It is defensible and it is not derived
             from anything. A real mandate would set concentration limits as a constraint agreed
             with the client up front, not as a correction applied afterwards.
           </li>
           <li>
             Transaction costs and rebalancing frequency are not modelled. A rolling window strategy
-            trades, and trading is not free. The out of sample figures would come down.
+            trades, and <strong>trading is not free</strong>. The out of sample figures would come down.
           </li>
           <li>
             This was an assessed university project worked on over one term, not a live mandate.
@@ -209,23 +209,6 @@
     </div>
   </section>
 
-  <!-- ============================ CLOSE ============================ -->
-  <section class="section section--alt reveal">
-    <div class="wrap wrap--narrow" style="text-align:center">
-      <p class="eyebrow eyebrow--accent">Next</p>
-      <h2 style="font-size:clamp(1.8rem,4vw,2.6rem);margin:.9rem 0 1.4rem">
-        The other two projects.
-      </h2>
-      <p class="lede" style="margin-bottom:2rem">
-        A stablecoin escrow I ran the compliance workstream on, and three technical pieces in
-        Python ending in a smart contract that ran on a live chain.
-      </p>
-      <div class="btn-row" style="justify-content:center">
-        <a class="btn" href="blockmediary.html">Blockmediary</a>
-        <a class="btn btn--ghost" href="forecasting-and-smart-contracts.html">Forecasting and smart contracts</a>
-      </div>
-    </div>
-  </section>
 
 </main>
 
@@ -245,18 +228,16 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h3>Projects</h3>
+        <h3>More</h3>
         <ul>
-          <li><a href="blockmediary.html">Blockmediary</a></li>
-          <li><a href="endowment-portfolio.html">Endowment portfolio</a></li>
-          <li><a href="forecasting-and-smart-contracts.html">Forecasting and smart contracts</a></li>
+          <li><a href="../index.html#projects">All projects</a></li>
+          <li><a href="../off-the-desk.html">Off the Desk</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h3>Elsewhere</h3>
         <ul>
           <li><a href="../assets/docs/CV.pdf" target="_blank" rel="noopener">Resume</a></li>
-          <li><a href="../off-the-desk.html">Off the Desk</a></li>
           <li><a href="https://block-med-nine.vercel.app" rel="noopener" target="_blank">Blockmediary prototype</a></li>
         </ul>
       </div>
@@ -268,6 +249,6 @@
   </div>
 </footer>
 
-<script src="../assets/js/site.js?v=15"></script>
+<script src="../assets/js/site.js?v=16"></script>
 </body>
 </html>

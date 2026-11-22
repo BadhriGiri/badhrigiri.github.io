@@ -20,8 +20,8 @@
   --accent-wash:   #EAF0ED;
   --shadow-lift:   0 2px 4px rgba(20, 23, 26, .05), 0 16px 40px rgba(20, 23, 26, .09);
 
-  --font-display: "Newsreader", Georgia, "Times New Roman", serif;
-  --font-body:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-body:    "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --font-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   --wrap:    1120px;
@@ -81,19 +81,32 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 1rem;
-  line-height: 1.65;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
+
+/* Emphasis. Every paragraph in one colour gives a reader nowhere to land, so
+   a bolded phrase is set in the accent to mark the sentence that carries the
+   point. Used sparingly: roughly one per paragraph, never a whole sentence. */
+strong, b {
+  font-weight: 700;
+  color: var(--accent);
+}
+.lede strong, .lede b { font-weight: 600; }
+/* Inside the accent-washed blocks the green on green would go flat, so
+   emphasis there falls back to full-strength ink. */
+.callout strong, .award strong, .award b { color: var(--ink); }
 
 img { max-width: 100%; display: block; }
 a { color: inherit; }
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: -0.015em;
-  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  line-height: 1.12;
   margin: 0;
 }
 
