@@ -15,9 +15,13 @@
   --muted:         #6B7280;
   --line:          #E3DFD7;
   --line-strong:   #CFC9BD;
-  --accent:        #1F4B3F;
-  --accent-hover:  #2B6553;
-  --accent-wash:   #EAF0ED;
+  /* Light theme green. The old #1F4B3F sat at 9.4:1 against the page, which is
+     far more contrast than anything needs and is why it read as black rather
+     than as green. This is 2.6x the luminance and still clears AA for body text
+     on all four surfaces it lands on: page, alt band, card and wash. */
+  --accent:        #0E7A52;
+  --accent-hover:  #0A6241;
+  --accent-wash:   #E7F2EC;
   --shadow-lift:   0 2px 4px rgba(20, 23, 26, .05), 0 16px 40px rgba(20, 23, 26, .09);
 
   --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;

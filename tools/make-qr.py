@@ -34,7 +34,9 @@ URL = "https://badhrigiri.github.io"
 
 INK = "#000000"
 PAPER = "#FFFFFF"
-BRAND_INK = "#1F4B3F"      # the site's accent green
+BRAND_INK = "#1F4B3F"      # the site's OLD accent green, kept on purpose:
+                           # the site moved to a lighter #0E7A52 for legibility,
+                           # but a QR wants maximum contrast, not matching paint
 BRAND_PAPER = "#FBFAF7"    # the site's off white
 
 # 28 puts the code around 1150px across, so a phone at 1080 to 1290px wide shows
