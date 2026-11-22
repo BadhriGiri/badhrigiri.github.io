@@ -160,15 +160,19 @@ p:last-child { margin-bottom: 0; }
 .section-head h2 { font-size: clamp(1.9rem, 4vw, 2.9rem); max-width: 20ch; }
 .section-head p { color: var(--muted); font-size: 1.02rem; max-width: 58ch; }
 
+/* Accent by default. 56 of the 69 eyebrows on the site already asked for the
+   accent explicitly; the 13 that did not were the page heroes, which left the
+   top of every project page with no colour in it at all. */
 .eyebrow {
   font-family: var(--font-mono);
   font-size: .7rem;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--accent);
   margin: 0;
 }
 .eyebrow--accent { color: var(--accent); }
+.eyebrow--muted  { color: var(--muted); }
 
 /* A quotation standing in for the usual intro paragraph under a section heading */
 .section-quote {
@@ -355,7 +359,7 @@ p:last-child { margin-bottom: 0; }
   font-size: .66rem;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--accent);
   margin-bottom: .3rem;
 }
 .meta-list dd { margin: 0; font-size: .95rem; color: var(--ink); }
