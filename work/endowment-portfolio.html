@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Endowment portfolio | Badhri Narayanan Giri</title>
-<meta name="description" content="Lead quantitative analyst on investment recommendations for a university endowment fund: mean variance optimisation, a Black Litterman overlay, yield curve construction, and out of sample testing that lifted the Sharpe ratio from 0.41 to 0.56.">
+<meta name="description" content="Investment recommendations for the University of Wakanda endowment fund under budget pressure, against a CFO target of 0.3% monthly return. Mean variance optimisation, a Black Litterman overlay, and a test of how far the answer depended on the sample.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230E7A52'/><text y='.9em' x='50%25' text-anchor='middle' font-size='62' font-family='Georgia,serif' fill='%23FBFAF7'>B</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,45 +45,38 @@
 
 <main id="main">
 
-  <!-- ============================ HERO ============================ -->
   <section class="page-hero">
     <div class="wrap">
       <a class="back-link" href="../index.html">Back to home</a>
       <div class="hero-grid">
         <div>
-          <p class="eyebrow">University of Exeter &middot; MSc project &middot; Team of six</p>
+          <p class="eyebrow">University of Exeter &middot; MSc group project &middot; BEAM046</p>
           <h1>Endowment portfolio</h1>
-          <p class="lede">
-            Investment recommendations for a university endowment fund under budget pressure,
-            with a target of 0.3% monthly return. I was the team's lead quantitative analyst,
-            which meant <strong>owning the optimisation work and then saying where it should not be
-            trusted</strong>.
-          </p>
+          <p class="lede">Investment recommendations for a university endowment fund under budget pressure, against a <strong>CFO target of 0.3% monthly return</strong>. A group report, and the part I would point at is the question of whether our answer was stable at all.</p>
           <ul class="tags">
             <li class="tag">Mean variance optimisation</li>
             <li class="tag">Black Litterman</li>
-            <li class="tag">Yield curves</li>
-            <li class="tag">Out of sample testing</li>
+            <li class="tag">Efficient frontier</li>
+            <li class="tag">Bond ETFs</li>
           </ul>
         </div>
-
         <div class="hero-meta">
           <dl class="meta-list">
             <div>
-              <dt>My role</dt>
-              <dd>Lead quantitative analyst</dd>
+              <dt>Format</dt>
+              <dd>Assessed group report, BEAM046 Financial Modelling</dd>
             </div>
             <div>
-              <dt>Format</dt>
-              <dd>Assessed MSc module project, January to May 2026</dd>
+              <dt>Client</dt>
+              <dd>University of Wakanda endowment fund, a teaching case</dd>
             </div>
             <div>
               <dt>The target</dt>
-              <dd>0.3% monthly return for a fund under budget pressure</dd>
+              <dd>0.3% monthly return, set by the CFO</dd>
             </div>
             <div>
-              <dt>Result</dt>
-              <dd>Out of sample Sharpe ratio 0.41 to 0.56, maximum drawdown 1.23% to 0.98%</dd>
+              <dt>Universe</dt>
+              <dd>Six bond ETFs, monthly returns from 2016</dd>
             </div>
           </dl>
         </div>
@@ -91,124 +84,104 @@
     </div>
   </section>
 
-  <!-- ============================ BRIEF ============================ -->
   <section class="section section--alt reveal">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow eyebrow--accent">The brief</p>
-        <h2>A return target and no room to be wrong</h2>
+        <h2>A return target and a shrinking budget</h2>
       </div>
       <div class="prose">
         <p>
-          A university endowment fund under budget pressure needed a multi asset allocation that
-          would deliver 0.3% a month. The number matters more than it looks. <strong>An endowment under
-          pressure cannot absorb a bad year</strong> the way a fund with headroom can, so the brief was
-          really about the downside as much as the return.
+          The University of Wakanda's endowment was being leaned on to cover budget shortfalls
+          caused by falling student enrolment, and its CFO had set a target of
+          <strong>0.3% a month</strong>. The fund held a three ETF bond portfolio. Our job was to
+          say whether it could reach the target and what it should hold instead.
         </p>
         <p>
-          Six of us split the work. I ran the optimisation and the testing, which meant I was the
-          one who had to say whether the allocation we were about to recommend would survive
-          contact with data the model had never seen.
+          The number matters more than it looks. A fund being drawn on to bridge a shortfall
+          <strong>cannot absorb a bad year the way one with headroom can</strong>, so the brief was
+          about the downside at least as much as the return.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ============================ BUILD ============================ -->
   <section class="section reveal">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow eyebrow--accent">What I built</p>
+        <p class="eyebrow eyebrow--accent">What we built</p>
         <h2>The allocation, and the curve underneath it</h2>
       </div>
       <div class="prose">
         <p>
-          Mean variance optimisation and efficient frontier analysis to find the allocations worth
-          considering, then a Black Litterman overlay so the team's own views on the market could
-          be folded in without letting them overwhelm the historical estimates. Yield curves built
-          by bootstrapping and Nelson Siegel fitting, with bond valuation sitting on top of them.
-          Performance judged on return, volatility, Sharpe ratio and maximum drawdown rather than
-          return alone.
+          Mean variance optimisation and efficient frontier analysis across an expanded universe of
+          six bond ETFs, then a <strong>Black Litterman overlay</strong> so the team's own market
+          views could be folded in without overwhelming the historical estimates. Yield curves built
+          by bootstrapping, with bond valuation on top. Performance judged on return, volatility,
+          Sharpe ratio and maximum drawdown rather than return alone.
         </p>
         <p>
-          None of that is unusual. <strong>It is the standard toolkit, applied carefully</strong>. What follows is
-          the part I would actually point at.
+          Expanding the investment universe visibly improved the efficient frontier, and the
+          defensive portfolio behaved defensively because of its weighting toward low volatility
+          assets. None of that is surprising. The next part is the bit worth reading.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ============================ JUDGMENT ============================ -->
   <section class="section section--alt reveal">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow eyebrow--accent">Where I disagreed with the model</p>
-        <h2>Three times the output was not the recommendation</h2>
+        <p class="eyebrow eyebrow--accent">Where I pushed back</p>
+        <h2>The answer depended on where we started looking</h2>
       </div>
       <div class="prose">
-        <ol class="numbered">
-          <li>
-            <h3>It wanted 84.9% of the fund in one strategy</h3>
-            <p>
-              The optimiser is indifferent to concentration risk unless you tell it not to be. It
-              put almost the entire allocation into a single strategy because that is what the
-              historical numbers rewarded. <strong>I flagged it and recommended a 50% cap</strong>. The capped
-              portfolio is worse on paper and better in practice, and for a fund that cannot
-              absorb a bad year that trade is the right way round.
-            </p>
-          </li>
-          <li>
-            <h3>The expected returns were built on too little data</h3>
-            <p>
-              Mean variance optimisation is notoriously sensitive to its expected return inputs,
-              and ours were estimated from 96 observations. I tested how much the allocation moved
-              when the sample length changed, found it moved a great deal, and re-ran the analysis
-              on 150 observations to stabilise the inputs. <strong>A model whose answer depends on how far
-              back you started looking is not giving you an answer</strong>.
-            </p>
-          </li>
-          <li>
-            <h3>The in sample result was not the result</h3>
-            <p>
-              I rebuilt the statistical arbitrage hedge ratio on a rolling 252 day window rather
-              than fitting it once over the whole period, and added estimation bias analysis. Out
-              of sample, <strong>the Sharpe ratio went from 0.41 to 0.56 and maximum drawdown fell from
-              1.23% to 0.98%</strong>. An in sample result that does not survive out of sample testing is
-              not a result, it is a description of the past.
-            </p>
-          </li>
-        </ol>
+        <p>
+          The portfolios were constructed from <strong>96 monthly observations</strong>, January 2016
+          to December 2023. Mean variance optimisation is notoriously sensitive to its expected
+          return inputs, and 96 observations is not many to estimate them from.
+        </p>
+        <p>
+          So we re-ran the construction on an <strong>expanded in-sample period of 150
+          observations</strong> and compared the weights and performance directly. With a standard
+          error of roughly 0.004 on a sample that size, a portfolio whose composition moves
+          materially when you extend the window is not giving you an allocation, it is giving you an
+          artefact of the start date.
+        </p>
+        <p>
+          Running the comparison and publishing both versions is less satisfying than reporting one
+          confident set of weights. <strong>It is also the only honest way to present an optimiser's
+          output to somebody who intends to act on it.</strong>
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- ============================ HONESTY ============================ -->
   <section class="section reveal">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow eyebrow--accent">Where it is unfinished</p>
-        <h2>What I would want to check before anyone acted on it</h2>
+        <h2>What I would check before anyone acted on it</h2>
       </div>
       <div class="prose">
         <ul>
           <li>
-            <strong>The 50% cap is a judgment, not an optimisation</strong>. It is defensible and it is not derived
-            from anything. A real mandate would set concentration limits as a constraint agreed
-            with the client up front, not as a correction applied afterwards.
+            Transaction costs and rebalancing frequency are not modelled. Any strategy that
+            reweights trades, and trading is not free, so the reported figures are optimistic.
           </li>
           <li>
-            Transaction costs and rebalancing frequency are not modelled. A rolling window strategy
-            trades, and <strong>trading is not free</strong>. The out of sample figures would come down.
+            The investment universe is six bond ETFs because the brief set it there. A real
+            endowment mandate would not be constrained to one asset class.
           </li>
           <li>
-            This was an assessed university project worked on over one term, not a live mandate.
-            The analysis is careful and it has not been tested by anybody losing money on it.
+            This was an assessed teaching case worked on over one term, not a live mandate. The
+            analysis is careful and <strong>it has not been tested by anybody losing money on
+            it</strong>.
           </li>
         </ul>
       </div>
     </div>
   </section>
-
 
 </main>
 
