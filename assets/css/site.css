@@ -666,13 +666,22 @@ p:last-child { margin-bottom: 0; }
    pushed straight through the next column. min-width lets it shrink, and the
    wrap lets it break rather than overflow. */
 .footer-col { min-width: 0; }
+/* Underlined on purpose. These are the address, the profiles and the resume,
+   and a reader should be able to tell they are links without hovering. */
 .footer-col a {
   font-size: .93rem;
-  text-decoration: none;
   color: var(--ink-soft);
   overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+  transition: color .16s ease, text-decoration-color .16s ease;
 }
-.footer-col a:hover { color: var(--accent); }
+.footer-col a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
 
 .footer-base {
   display: flex;
