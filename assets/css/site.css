@@ -638,7 +638,16 @@ p:last-child { margin-bottom: 0; }
   margin-bottom: .9rem;
 }
 .footer-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .55rem; }
-.footer-col a { font-size: .93rem; text-decoration: none; color: var(--ink-soft); }
+/* A grid item will not shrink below its content by default, so the email address
+   pushed straight through the next column. min-width lets it shrink, and the
+   wrap lets it break rather than overflow. */
+.footer-col { min-width: 0; }
+.footer-col a {
+  font-size: .93rem;
+  text-decoration: none;
+  color: var(--ink-soft);
+  overflow-wrap: anywhere;
+}
 .footer-col a:hover { color: var(--accent); }
 
 .footer-base {
