@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Forecasting and smart contracts | Badhri Narayanan Giri</title>
-<meta name="description" content="Gradient descent implemented from first principles on Bitcoin and Dogecoin prices, an Ethereum forecast built to avoid look ahead bias, and a game theory experiment deployed as a working smart contract on a live chain.">
+<meta name="description" content="Gradient descent implemented from first principles on Bitcoin and Dogecoin prices, an Ethereum forecast built to avoid look ahead bias, and a game theory experiment deployed as a working smart contract on Bitcoin SV mainnet.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230E7A52'/><text y='.9em' x='50%25' text-anchor='middle' font-size='62' font-family='Georgia,serif' fill='%23FBFAF7'>B</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,7 +62,7 @@
             <li class="tag">Python</li>
             <li class="tag">Gradient descent</li>
             <li class="tag">Time series</li>
-            <li class="tag">Solidity</li>
+            <li class="tag">sCrypt</li>
           </ul>
         </div>
 
@@ -74,7 +74,7 @@
             </div>
             <div>
               <dt>Built in</dt>
-              <dd>Python, with a deployed Solidity contract and a browser front end</dd>
+              <dd>Python, plus an sCrypt contract on Bitcoin SV mainnet with a browser front end</dd>
             </div>
             <div>
               <dt>Also included</dt>
@@ -119,15 +119,17 @@
       <div class="prose">
         <p>
           Rather than calling a library, the exercise was to implement gradient descent myself and
-          fit a relationship between Bitcoin and Dogecoin price data. It did not converge. The
-          loss simply refused to settle, which is the least informative failure a model can give
-          you, because almost anything can cause it.
+          fit a relationship between Bitcoin and Dogecoin price data. It did not merely fail to settle,
+          it <strong>diverged outright at iteration 80</strong>, the loss running away from the
+          minimum rather than toward it.
         </p>
         <p>
-          <strong>The cause turned out to be the data rather than the algorithm</strong>. Bitcoin and Dogecoin are
-          separated by several orders of magnitude in price, so a single learning rate could not
-          suit both series at once: the step that was reasonable for one was wildly wrong for the
-          other. Normalising the inputs fixed it.
+          <strong>The cause turned out to be the data rather than the algorithm</strong>. Bitcoin traded
+          between roughly $15,000 and $47,000 across the sample while Dogecoin sat in cents, a
+          difference of about <strong>300,000 times</strong>. The gradient with respect to the slope
+          scales with the size of the inputs, so no single learning rate could suit both parameters
+          at once: the step that was reasonable for one was catastrophic for the other.
+          Standardising the features fixed it.
         </p>
         <p>
           The part worth keeping is what came after. Gradient descent on a linear relationship has
@@ -179,12 +181,12 @@
       <div class="prose">
         <p>
           The third piece was a dictator game, the behavioural economics experiment where one
-          participant divides a sum and the other has no say, implemented as a smart contract,
-          tested, and deployed to a live chain with a browser front end so it could actually be
-          played.
+          participant divides a sum and the other has no say, written in sCrypt, tested, and
+          <strong>deployed to Bitcoin SV mainnet</strong> with a browser front end so it could
+          actually be played. Not a testnet, and the pot was real satoshis.
         </p>
         <p>
-          Deploying changes the standard. <strong>A contract on a live chain is immutable and public</strong>:
+          Deploying changes the standard. <strong>A contract on mainnet is immutable and public</strong>:
           there is no quietly patching a mistake, and anybody can read what you wrote. That is a
           useful thing to have experienced directly before writing about why the immutability of a
           ledger creates problems elsewhere, which is exactly what the compliance work on
