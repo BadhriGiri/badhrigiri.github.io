@@ -164,15 +164,27 @@
       <div class="prose">
         <p>
           The final piece used difference in differences to estimate the effect of a government
-          savings incentive of £500, which came out at a <strong>predicted increase of around
-          £1,065</strong> in household savings over the 2017 to 2019 window. The joint test on the
-          time fixed effects was significant at the 2% level, confirming there was genuine temporal
-          variation for the estimator to work with.
+          savings incentive of £500, comparing year one, before the programme, against year four as
+          it wound down. The point estimate came out at <strong>about £1,065</strong> of additional
+          household savings.
         </p>
         <p>
-          That result rests on the <strong>parallel trends assumption</strong>, which is an assumption
-          rather than a finding. If treated and untreated households were already diverging before
-          the programme, the estimate absorbs that divergence and overstates the effect.
+          <strong>It is not statistically significant.</strong> The p value is 0.38, so the honest
+          reading is that this design, on 180 observations, cannot distinguish the programme's
+          effect from nothing. I am reporting the number because it is what the model produced, and
+          reporting the p value because a point estimate without one invites a reader to believe
+          something the data does not support.
+        </p>
+        <p>
+          The joint test on the time fixed effects was a different matter and did come through,
+          F = 3.52 at <strong>p = 0.0039</strong>, so there is genuine variation across periods for
+          an estimator to work with. The limitation is the design rather than the data.
+        </p>
+        <p>
+          A difference in differences estimate also rests on the <strong>parallel trends
+          assumption</strong>, which is an assumption and not a finding. If treated and untreated
+          households were already diverging before the programme, the estimate absorbs that
+          divergence.
         </p>
       </div>
     </div>
