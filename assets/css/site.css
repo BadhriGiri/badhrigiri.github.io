@@ -31,6 +31,9 @@
   --step:    clamp(4.5rem, 9vw, 8rem);
 }
 
+/* Light is the default, deliberately. The site no longer follows the operating
+   system's prefers-color-scheme: dark applies only when a visitor asks for it
+   with the toggle, and that choice is remembered in localStorage. */
 :root[data-theme="dark"] {
   --bg:            #0E1113;
   --bg-alt:        #14181B;
@@ -46,22 +49,6 @@
   --shadow-lift:   0 2px 4px rgba(0, 0, 0, .35), 0 16px 40px rgba(0, 0, 0, .45);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg:            #0E1113;
-    --bg-alt:        #14181B;
-    --surface:       #171C1F;
-    --ink:           #EAE8E3;
-    --ink-soft:      #C3C7CB;
-    --muted:         #8B949C;
-    --line:          #262C31;
-    --line-strong:   #384147;
-    --accent:        #79C4A6;
-    --accent-hover:  #96D6BC;
-    --accent-wash:   #16241F;
-    --shadow-lift:   0 2px 4px rgba(0, 0, 0, .35), 0 16px 40px rgba(0, 0, 0, .45);
-  }
-}
 
 /* --------------------------------------------------------------------------
    2. Reset and base
@@ -280,10 +267,6 @@ p:last-child { margin-bottom: 0; }
 .theme-toggle .moon { display: none; }
 :root[data-theme="dark"] .theme-toggle .sun { display: none; }
 :root[data-theme="dark"] .theme-toggle .moon { display: block; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .theme-toggle .sun { display: none; }
-  :root:not([data-theme="light"]) .theme-toggle .moon { display: block; }
-}
 
 .nav-toggle { display: none; }
 
@@ -802,11 +785,6 @@ p:last-child { margin-bottom: 0; }
    in SVG is untouched, so the accent colour stays correct in both themes. */
 :root[data-theme="dark"] .route-map img {
   filter: invert(1) saturate(.18) brightness(.92) contrast(1.04);
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .route-map img {
-    filter: invert(1) saturate(.18) brightness(.92) contrast(1.04);
-  }
 }
 
 /* One carousel per walk. The route map is the first slide, at the size it always

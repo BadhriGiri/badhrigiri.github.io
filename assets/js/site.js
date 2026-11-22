@@ -9,7 +9,7 @@
     var stored = null;
     try { stored = localStorage.getItem("theme"); } catch (e) { /* private mode */ }
     if (stored === "light" || stored === "dark") return stored;
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    return "light";   // the default, regardless of the operating system setting
   }
 
   var toggle = document.querySelector(".theme-toggle");
