@@ -115,6 +115,9 @@ h1, h2, h3, h4 {
   margin: 0;
   color: var(--accent);
 }
+/* The name is not a section title. In the accent it became the largest green
+   element on the page and pulled focus from the lede underneath it. */
+h1 { color: var(--ink); }
 /* The footer's column labels are set as mono micro-labels rather than titles,
    so they keep the muted treatment set further down. */
 
