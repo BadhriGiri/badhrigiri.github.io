@@ -372,7 +372,9 @@ p:last-child { margin-bottom: 0; }
   flex-wrap: wrap;
   gap: .4rem 0;
   max-width: 62ch;
-  margin-top: 1.7rem;
+  /* Bottom margin as well as top: the buttons that follow were sitting flush
+     against the box. */
+  margin: 1.7rem 0 1.9rem;
   padding: .9rem 1.15rem;
   border: 1px solid var(--line);
   border-left: 2px solid var(--accent);
