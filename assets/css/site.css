@@ -440,7 +440,10 @@ p:last-child { margin-bottom: 0; }
 .card-grid {
   display: grid;
   gap: 1.25rem;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  /* min() so the track can fall below 340px when the container is narrower than
+     that, which it is on a phone. Without it the card keeps its 340px floor,
+     overruns the wrap's right padding and sits visibly off centre. */
+  grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
 }
 
 .card {
