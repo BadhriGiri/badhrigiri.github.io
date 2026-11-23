@@ -22,13 +22,14 @@
   --accent:        #0E7A52;
   --accent-hover:  #0A6241;
   --accent-wash:   #E7F2EC;
+  --gold:          #7A5E18;   /* award credits only */
   --shadow-lift:   0 2px 4px rgba(20, 23, 26, .05), 0 16px 40px rgba(20, 23, 26, .09);
 
   --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --font-body:    "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --font-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  --wrap:    1120px;
+  --wrap:    1240px;
   --wrap-sm: 760px;
   --radius:  6px;
 
@@ -50,6 +51,7 @@
   --accent:        #79C4A6;
   --accent-hover:  #96D6BC;
   --accent-wash:   #16241F;
+  --gold:          #C9A961;
   --shadow-lift:   0 2px 4px rgba(0, 0, 0, .35), 0 16px 40px rgba(0, 0, 0, .45);
 }
 
@@ -438,7 +440,7 @@ p:last-child { margin-bottom: 0; }
 .card-grid {
   display: grid;
   gap: 1.25rem;
-  grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
 }
 
 .card {
@@ -480,7 +482,43 @@ p:last-child { margin-bottom: 0; }
   .card--feature .card-body { display: flex; flex-direction: column; gap: .85rem; }
 }
 
-.card-index { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .12em; color: var(--accent); }
+/* Every project card leads with a figure from the work itself. The images run
+   from a 1:1 icon to a 3.6:1 title banner, so each figure carries its own
+   background colour, sampled from the edge of its image: a contained image then
+   letterboxes into something that matches it rather than into a white gap. */
+.card--visual { padding: 0; overflow: hidden; }
+.card--visual .card-figure {
+  margin: 0;
+  aspect-ratio: 16 / 9;
+  border-bottom: 1px solid var(--line);
+  background: var(--figure-bg, #FFFFFF);
+  overflow: hidden;
+}
+.card--visual .card-figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+/* A photograph fills the frame rather than sitting inside it. */
+.card-figure--cover img { object-fit: cover; object-position: center; }
+/* Damped a little in dark mode so the light plates do not glare. */
+:root[data-theme="dark"] .card--visual .card-figure img { filter: brightness(.92); }
+.card--visual .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+  padding: clamp(1.4rem, 2.5vw, 1.9rem);
+}
+
+/* Credit lines on a project card, between the title and the description. Two
+   colours because they are two different kinds of claim: a placement within the
+   cohort, and an award from outside the university. */
+.card-credits { display: grid; gap: .15rem; }
+/* Scoped to .card deliberately: `.card p` sets colour and size at (0,1,1), so an
+   unscoped .card-credit rule loses to it and the credits fall back to muted. */
+.card .card-credit { margin: 0; font-size: .86rem; font-weight: 600; line-height: 1.35; }
+.card .card-credit--rank  { color: var(--accent); }
+.card .card-credit--award { color: var(--gold); }
 
 /* --------------------------------------------------------------------------
    9. Numbered list
